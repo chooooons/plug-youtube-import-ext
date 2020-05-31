@@ -8,13 +8,13 @@ const filter = {
 const listener = req => {
     console.info(`BEGIN redirector: ${req.url}`);
 
-    const cid = req.url.match(/(?<=forUsername=)[\w\d\-]+/)[0];
+    const cid = (req.url.match(/(?<=forUsername=)[\w\d\-]+/) || [])[0];
 
     /**
      * Making the assumption that any channelId that isn't 24 characters
      * is a 'named' channel so redirection isn't needed.
      */
-    if(cid.length !== 24) {
+    if(cid?.length !== 24) {
         return;
     }
 
