@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "Plug.dj YouTube Import Redirector",
+    "version": "0.0.1",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "webRequest",
+        "webNavigation",
+        "webRequestBlocking",
+        "*://content.googleapis.com/youtube/*"
+    ]
+}
